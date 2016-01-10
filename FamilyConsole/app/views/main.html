@@ -29,7 +29,7 @@
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default " >
 			<div class="panel-heading">Heating Boost</div>
-			<div class="panel-body " style="height:60px" >
+			<div class="panel-body " style="height:70px" >
 		
 	
 				<button ng-if="boostStatus=='boost'" type="button" ng-click="boost()" class="btn btn-success ">Boost</button>
@@ -42,8 +42,12 @@
 
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default ">
-			<div class="panel-heading">Panel Heading</div>
-			<div class="panel-body" style="height:60px" >Panel Content</div>
+			<div class="panel-heading">Messages</div>
+			<div class="panel-body" style="height:70px" >
+				<div ng-repeat="m in messages">
+					{{m.message}} &nbsp; @{{m.time}}
+				</div>
+			</div>
 		 </div>
 	</div>
 </div>

@@ -11,6 +11,7 @@ angular.module('familyConsoleApp')
   .controller('MainCtrl', function ($scope, websocketService) {
     $scope.boostStatus='boost';
     $scope.homeStatus={};
+    $scope.messages=[];
 
 	$scope.boost = function() {
 	    $scope.boostStatus = 'processing';
@@ -27,7 +28,7 @@ angular.module('familyConsoleApp')
 	}
   
 
-	setTimeout('document.location.reload();',60000);
+	setTimeout('document.location.reload();',600000);
 
 	var socketaddy = "ws://thethingbox:1880/api/ws/homeautomationevent";
 	    
@@ -38,7 +39,17 @@ angular.module('familyConsoleApp')
         $scope.$apply(function () {
         	console.log("Current Status: " , $scope.homeStatus);
 	       	console.log("Got homeautomationevent: " , homeautomationevent);
-	       	$scope.homeStatus=homeautomationevent;
+	       	if('Announcement' in homeautomationevent) {
+		       	var d = new Date();
+		       	$scope.messages.push({time: d.toLocaleTimeString(), message: homeautomationevent.Announcement});
+		       	if ($scope.messages.length>2) {
+		       		$scope.messages.shift();
+		       	}
+	       	} else {
+	       		$scope.homeStatus=homeautomationevent;
+	       	}
+
+
         });
     });     
 })
