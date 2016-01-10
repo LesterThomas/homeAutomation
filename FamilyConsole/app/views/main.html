@@ -35,7 +35,10 @@
 				<button ng-if="boostStatus=='boost'" type="button" ng-click="boost()" class="btn btn-success ">Boost</button>
 				<button ng-if="boostStatus=='cancelBoost'" type="button" ng-click="cancelBoost()" class="btn btn-info ">Cancel Boost</button>
 				<button ng-if="boostStatus=='processing'" type="button" class="btn btn-default ">Processing</button>
-				
+				<button ng-if="katesFavorites==true" type="button" ng-click="katesFavoritesClicked()" class="btn btn-warning ">Kates Favorites</button>
+				<button ng-if="lestersFavorites==true" type="button" ng-click="lestersFavoritesClicked()" class="btn btn-warning ">Lesters Favorites</button>
+				<button ng-if="radio2==true" type="button" ng-click="radio2Clicked()" class="btn btn-warning ">Radio 2</button>
+
 			</div>
 		 </div>
 	</div>
