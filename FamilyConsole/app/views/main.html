@@ -2,13 +2,13 @@
 <div class="row" >
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default " style="height:90%">
-			<div class="panel-heading">Temperatures</div>
+			<div class="panel-heading"><small>Temperatures</small></div>
 			<div class="panel-body"  style="height:90px">
-				<p>Lounge: {{homeStatus.heatGenius.Lounge.Temperature}} &deg;C &nbsp; 
+				<p><small>Lounge:</small> {{homeStatus.heatGenius.Lounge.Temperature}} &deg;C &nbsp; 
 				<span ng-if="homeStatus.heatGenius.Lounge.Activity>0" class="glyphicon glyphicon-user" aria-hidden="true"></span><br />
-				Master Bedroom: {{homeStatus.heatGenius.MasterBedroom.Temperature}} &deg;C
+				<small>Master Bedroom:</small> {{homeStatus.heatGenius.MasterBedroom.Temperature}} &deg;C
 				<span ng-if="homeStatus.heatGenius.MasterBedroom.Activity>0" class="glyphicon glyphicon-user" aria-hidden="true"></span><br />
-				Kids Bedroom: {{homeStatus.heatGenius.KidsBedroom.Temperature}} &deg;C
+				<small>Kids Bedroom:</small> {{homeStatus.heatGenius.KidsBedroom.Temperature}} &deg;C
 				<span ng-if="homeStatus.heatGenius.KidsBedroom.Activity>0" class="glyphicon glyphicon-user" aria-hidden="true"></span><br />
 			</div>
 		 </div>
@@ -16,7 +16,7 @@
 	
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default " >
-			<div class="panel-heading">Where-abouts</div>
+			<div class="panel-heading"><small>Where-abouts</small></div>
 			<div class="panel-body"  style="height:90px">
 				<p>Lester is at {{homeStatus.occupancy.Lester}}<br />
 				Kate is at {{homeStatus.occupancy.Kate}}<br />
@@ -28,16 +28,17 @@
 <div class="row" >
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default " >
-			<div class="panel-heading">Heating Boost</div>
+			<div class="panel-heading"><small>Actions</small></div>
 			<div class="panel-body " style="height:70px" >
 		
-	
+				<small>
 				<button ng-if="boostStatus=='boost'" type="button" ng-click="boost()" class="btn btn-success ">Boost</button>
 				<button ng-if="boostStatus=='cancelBoost'" type="button" ng-click="cancelBoost()" class="btn btn-info ">Cancel Boost</button>
 				<button ng-if="boostStatus=='processing'" type="button" class="btn btn-default ">Processing</button>
 				<button ng-if="katesFavorites==true" type="button" ng-click="katesFavoritesClicked()" class="btn btn-warning ">Kates Favorites</button>
 				<button ng-if="lestersFavorites==true" type="button" ng-click="lestersFavoritesClicked()" class="btn btn-warning ">Lesters Favorites</button>
 				<button ng-if="radio2==true" type="button" ng-click="radio2Clicked()" class="btn btn-warning ">Radio 2</button>
+				</small>
 
 			</div>
 		 </div>
@@ -45,10 +46,10 @@
 
 	<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6" >
 		<div class="panel panel-default ">
-			<div class="panel-heading">Messages</div>
+			<div class="panel-heading"><small>Messages</small></div>
 			<div class="panel-body" style="height:70px" >
 				<div ng-repeat="m in messages">
-					{{m.message}} &nbsp; @{{m.time}}
+					<small>{{m.message}} &nbsp; @{{m.time}}</small>
 				</div>
 			</div>
 		 </div>
